@@ -28,8 +28,8 @@ video_path = '123/rockets.flv'
 metadata_path = '123/rockets_metadata.json'
 
 uploader = YouTubeUploader(video_path, metadata_path, thumbnail_path)
-was_video_uploaded, video_id = uploader.upload()
-assert was_video_uploaded
+success = uploader.upload()
+assert success
 ```
 
 ## Script Usage
@@ -57,16 +57,6 @@ An example JSON file would be:
 }
 ```
 For your convenience, the format string for the schedule is `%m/%d/%Y, %H:%M`
-
-## Dependencies
-* geckodriver
-* Firefox **[(Works with version 77)](https://ftp.mozilla.org/pub/firefox/releases/)**
-* selenium_firefox
-
-## FAQ
-* [Selenium using Python - Geckodriver executable needs to be in PATH](https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path)
-* [SessionNotCreatedException: Message: Unable to find a matching set of capabilities](https://stackoverflow.com/questions/47782650/selenium-common-exceptions-sessionnotcreatedexception-message-unable-to-find-a)
-   * Please make sure that Firefox browser is installed on your machine.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
