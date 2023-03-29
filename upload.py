@@ -1,15 +1,16 @@
 import argparse
 from youtube_uploader_selenium import YouTubeUploader
 from typing import Optional
+from pathlib import Path
 
 
 def main(video_path: str,
          metadata_path: Optional[str] = None,
          thumbnail_path: Optional[str] = None,
-         profile_path: Optional[str] = None):
+         profile_path: Optional[Path] = None):
     uploader = YouTubeUploader(video_path, metadata_path, thumbnail_path, profile_path)
-    was_video_uploaded, video_id = uploader.upload()
-    assert was_video_uploaded
+    success = uploader.upload()
+    assert success
 
 
 if __name__ == "__main__":
@@ -20,8 +21,8 @@ if __name__ == "__main__":
     parser.add_argument("-t",
                         "--thumbnail",
                         help='Path to the thumbnail image',)
-    parser.add_argument("--meta", help='Path to the JSON file with metadata')
-    parser.add_argument("--profile", help='Path to the firefox profile')
+    parser.add_argument("--meta_file", help='Path to JSON formatted file with metadata')
+    parser.add_argument("--profile", help='Path to the chrome profile')
     args = parser.parse_args()
 
-    main(args.video, args.meta, args.thumbnail, profile_path=args.profile)
+    main(args.video, args.meta, args.thumbnail, profile_path=Path(args.profile))

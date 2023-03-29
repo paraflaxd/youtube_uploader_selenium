@@ -11,8 +11,13 @@ class Constant:
     TEXTBOX_ID = 'textbox'
     TEXT_INPUT = 'text-input'
     RADIO_LABEL = 'radioLabel'
-    UPLOADING_STATUS_CONTAINER = '/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-animatable[2]/div/div[1]/ytcp-video-upload-progress[@uploading=""]'
+    UPLOADING_STATUS_CONTAINER = '/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-animatable[2]/div/div[1]/ytcp-video-upload-progress[contains(@class, "ytcp-uploads-dialog")]'
     NOT_MADE_FOR_KIDS_LABEL = 'VIDEO_MADE_FOR_KIDS_NOT_MFK'
+    REUSE_DETAILS_BUTTON = '/html/body/ytcp-feature-discovery-callout/div/div[3]/ytcp-button'
+
+    YOUTUBE_LOGIN_COOKIE = 'LOGIN_INFO'
+    YOUTUBE_CONSENT_DIALOG_ID = 'dialog'
+    REJECT_CONSENT_BUTTON = '//*[@id="content"]/div[2]/div[6]/div[1]/ytd-button-renderer[1]/yt-button-shape/button'
 
     UPLOAD_DIALOG = '//ytcp-uploads-dialog'
     ADVANCED_BUTTON_ID = 'toggle-button'
@@ -27,7 +32,7 @@ class Constant:
     ERROR_CONTAINER = '//*[@id="error-message"]'
     VIDEO_NOT_FOUND_ERROR = 'Could not find video_id'
     DONE_BUTTON = 'done-button'
-    INPUT_FILE_VIDEO = "//input[@type='file']"
+    INPUT_FILE_VIDEO = '//*[@id="content"]/input'
     INPUT_FILE_THUMBNAIL = "//input[@id='file-loader']"
 
     # Playlist

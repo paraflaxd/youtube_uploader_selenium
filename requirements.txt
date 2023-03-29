@@ -1,2 +1,2 @@
-selenium_firefox
 selenium < 4
+undetected_chromedriver

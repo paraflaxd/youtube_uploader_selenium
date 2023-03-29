@@ -73,6 +73,7 @@ fabric.properties
 # Mac
 /.DS_Store
 
+.vscode/
 # Project temp data
 /youtube_uploader_selenium/__pycache__/
 /cookies/
